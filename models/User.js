@@ -23,7 +23,15 @@ const userSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            
-        }
+        },
+    },
+    {
+        toJSON: {
+            getters: true,
+        },
     }
-)
+);
+
+const User = model("User", userSchema);
+
+modeule.exports = User 

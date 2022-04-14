@@ -1,3 +1,4 @@
+// Requiring the necessary model(s)
 const { User } = require("../models");
 
 const userController = {
@@ -58,4 +59,5 @@ const userController = {
   }
 };
 
+// Exporting this file so other files may access this file's information
 module.exports = userController;

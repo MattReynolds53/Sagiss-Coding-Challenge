@@ -1,8 +1,21 @@
 {
+  "name": "sagiss-coding-challenge",
+  "version": "1.0",
+  "description": "Back End Database Application.",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node utils/seed.js"
+  },
   "dependencies": {
     "express": "^4.17.3",
     "moment": "^2.29.2",
     "mongoose": "^6.2.10",
     "node": "^17.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
   }
 }
