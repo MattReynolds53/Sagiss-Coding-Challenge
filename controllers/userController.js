@@ -21,20 +21,42 @@ const userController = {
   },
 
   getUserById(req, res) {
-    User.findOne({ _id: req.params.userId })
-      .select("-__v")
-      .then((user) =>
-        !user
-          ? res.status(404).json({
-              message: "Uh oh, there seems to be no User with that ID.",
-            })
-          : res.json(user)
-      )
+    User.findById(req.params.userId)
+      .then((user) => {
+        if (!user) {
+          return res.status(404).send({
+            message: `No user found with id:${req.params.userId}`,
+          });
+        }
+        res.send(user);
+      })
       .catch((err) => {
-          console.log(err);
-          res.status(500).json(err);
+        if (err.kind === "ObjectId") {
+          return res.status(404).send({
+            message: `No user found with id:${req.params.userId}`,
+          });
+        }
+        return res.status(500).send({
+          message: `There was an error when returning the user under id:${req.params.userId}`,
+        });
       });
   },
+
+  //   getUserById(req, res) {
+  //     User.findOne({ _id: req.params.userId })
+  //       .select("-__v")
+  //       .then((user) =>
+  //         !user
+  //           ? res.status(404).json({
+  //               message: "Uh oh, there seems to be no User with that ID.",
+  //             })
+  //           : res.json(user)
+  //       )
+  //       .catch((err) => {
+  //           console.log(err);
+  //           res.status(500).json(err);
+  //       });
+  //   },
 
   updateUser(req, res) {
     User.findOneAndUpdate(

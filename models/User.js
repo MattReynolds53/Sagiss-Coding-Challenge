@@ -2,10 +2,11 @@ const { Schema, Types, model } = require('mongoose');
 
 const userSchema = new Schema(
     {
-        userId: {
-            type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId(),
-        },
+        // I am commenting out userId because it was returning an id that was one character different than the auto-assigned _id that MongoDB assigns it. Only the mongoDB assigned _id was working in the UL paramters when searching for a single user.
+        // userId: {
+        //     type: Schema.Types.ObjectId,
+        //     default: () => new Types.ObjectId(),
+        // },
         fullName: {
             type: String,
             required: true,
