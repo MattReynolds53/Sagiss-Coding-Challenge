@@ -1,4 +1,5 @@
 // Requiring the necessary model(s)
+const { notEqual } = require("assert");
 const { User } = require("../models");
 
 const userController = {
@@ -58,23 +59,50 @@ const userController = {
   //       });
   //   },
 
+
   updateUser(req, res) {
-    User.findOneAndUpdate(
-      { _id: req.params.id },
-      { $set: req.body },
-      { runValidators: true, new: true }
-    )
-      .then((dbUserData) => {
-        if (dbUserData) {
-          res
-            .status(404)
-            .json({ message: "Sorry, here is no User with that ID." });
-          return;
+    User.findByIdAndUpdate(req.params.userId, {
+         fullName: req.body.fullName,
+         dateOfBirth: req.body.dateOfBirth,
+         address: req.body.address,
+         description: req.body.description
+    }, {new: true})
+    .then(user => {
+        if(!user) {
+            return res.status(404).send({
+                message: `There is no user listed under id:${req.params.userId}`
+            });
         }
-        res.json(dbUserData);
-      })
-      .catch((err) => res.json(err));
+        res.send(user);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: `There is no user listed under id:${req.params.userId}`
+            });
+        }
+        return res.status(500).send({
+            message: `There seems to be an error when updating the user under id:${req.params.userId}`
+        });
+    });
   },
+
+//   updateUser(req, res) {
+//     User.findOneAndUpdate(
+//       { _id: req.params.id },
+//       { $set: req.body },
+//       { runValidators: true, new: true }
+//     )
+//       .then((dbUserData) => {
+//         if (dbUserData) {
+//           res
+//             .status(404)
+//             .json({ message: "Sorry, here is no User with that ID." });
+//           return;
+//         }
+//         res.json(dbUserData);
+//       })
+//       .catch((err) => res.json(err));
+//   },
 
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
