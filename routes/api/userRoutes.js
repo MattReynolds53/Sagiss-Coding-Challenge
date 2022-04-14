@@ -14,3 +14,5 @@ router.route("/").get(getAllUsers).post(createUser);
 
 // /api/users:id to get an individual user's information, update the respective user's information, or delete the respective user from the database
 router.route("/:id").get(getUserById).put(updateUser).delete(deleteUser);
+
+module.exports = router;

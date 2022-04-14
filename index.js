@@ -1,7 +1,7 @@
 // The following is requiring the necessary dependencies
 const express = require('express');
 const db = require('./config/connection');
-const routes = requires('./routes');
+const routes = require('./routes');
 
 const cwd = process.cwd();
 

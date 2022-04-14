@@ -1,6 +1,6 @@
 // Requiring the necessary dependencies
 const router = require('express').Router();
-const userRoutes = require('./userRoutes');
+const userRoutes = require('./userRoutes.js');
 
 // Adding an additional paramter to the URL to direct the user to the correct endpoint
 router.use('/user', userRoutes);
