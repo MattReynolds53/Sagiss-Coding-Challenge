@@ -6,12 +6,13 @@ const userSchema = new Schema(
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId(),
         },
-        name: {
+        fullName: {
             type: String,
             required: true,
         },
         dateOfBirth: {
-            type: Date,
+            type: String,
+            required: true,
         },
         address: {
             type: String,
@@ -32,6 +33,6 @@ const userSchema = new Schema(
     }
 );
 
-const User = model("User", userSchema);
+const User = model("user", userSchema);
 
 module.exports = User 
