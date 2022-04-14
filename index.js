@@ -13,6 +13,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
+// The line of code above begins the pathway throughout the files and indiciates the correct URL routes for the user. Ctrl + click (or command + click) to follow.
 
 // Using this code to direct the User to the local server and inform them the server is up and running properly
 db.once('open', () => {

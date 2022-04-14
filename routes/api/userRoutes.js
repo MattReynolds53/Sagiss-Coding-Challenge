@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-// The following are the functions from the userController to get the information of all users, get a single user's information, create a new user, update an existing user, and delete an existing user.
+// The following are the functions from the userController to get the information of all users, create a new user, get a single user's information, update an existing user, and delete an existing user.
 const {
   getAllUsers,
   createUser,
@@ -15,4 +15,5 @@ router.route("/").get(getAllUsers).post(createUser);
 // /api/user/:userId to get an individual user's information, update the respective user's information, or delete the respective user from the database
 router.route("/:userId").get(getUserById).put(updateUser).delete(deleteUser);
 
+// Exporting this file so other files may access this file's information
 module.exports = router;
