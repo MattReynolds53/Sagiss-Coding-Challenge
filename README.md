@@ -1,62 +1,62 @@
-# TBGL Back-end Developer Test
+# React Portfolio
 
-Make sure you read the whole document carefully and follow the guidelines in it.
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Context
+## Table of Contents
 
-Build a RESTful API that can `get/create/update/delete` user data from a persistence database
+<a href="#description">Description</a>
 
-### User Model
+<a href="#installation">Installation</a>
 
-```
-{
-  "id": "xxx",                  // user ID 
-  "name": "test",               // user name
-  "dob": "",                    // date of birth
-  "address": "",                // user address
-  "description": "",            // user description
-  "createdAt": ""               // user created date
-}
-```
+<a href="#usage">Usage</a>
 
-## Requirements
+<a href="#license">License</a>
 
-### Functionality
+<a href="#questions">Questions</a>
 
-- The API should follow typical RESTful API design pattern.
-- The data should be saved in the DB.
-- Write clear documentation on how it's designed and how to run the code.
-- Write good in-code comments.
-- Write good commit messages.
+<div id="description"></div>
 
-### Tech stack
+## Description
 
-- Use Node.js and any framework.
-- Use any DB. Mongodb is preferred.
+For this applicaiton, I created a RESTful API that can get/create/update/delete user data from a persistence database. The database sotes information about a user such as his or her full name, date of birth, address, personal ID number, and personal description. Upon creating an instance of a individual in the database, the user can then manipulate that information however he or she pleases.
 
-### Bonus
+<div id="installation"></div>
 
-- Provide proper unit test.
-- Provide proper API document.
-- An online demo is always welcome.
+## Installation
 
-### Advanced requirements
+When the user opens this application, he or she can enter 'npm i' to install the necessary dependencies. Then the user can enter 'npm run dev' to open a live server that will adjust whenever changes are amde to the code to avoid having to stop and start the server each time a change is made.
 
-*These are used for some further challenges. You can safely skip them if you are not asked to do any, but feel free to try out.*
+<div id="usage"></div>
 
-- Provide a complete user auth (authentication/authorization/etc.) strategy, such as OAuth.
-- Provide a complete logging (when/how/etc.) strategy.
-- Imagine we have a new requirement right now that the user instances need to link to each other, i.e., a list of "followers/following" or "friends". Can you find out how you would design the model structure and what API you would build for querying or modifying it?
-- Related to the requirement above, suppose the address of user now includes a geographic coordinate(i.e., latitude and longitude), can you build an API that,
-  - given a user name
-  - return the nearby friends
+## Usage
 
+When exploring this application, users can navigate throughout the database through various endpoints. If a user enters 'npm run dev' in the integrated terminal, he or she can then access the endpoints through an application like Insomnia in order to get/create/update/delete users in the database.
 
-## What We Care About
+<div id="license"></div>
 
-Feel free to use any open-source library as you see fit, but remember that we are evaluating your coding skills and problem solving skills.
+## License
 
-Here's what you should aim for:
+This application is covered under the MIT license.
 
-- Good use of current Node.js & API design best practices.
-- Documentation.
+<div id="questions"></div>
+
+## Questions
+
+<a href="https://github.com/MattReynolds53">View My GitHub Profile</a>
+
+If you have further questions, please feel free to email me at mattreynolds53@gmail.com at an appropriate time.
+
+## Links
+
+GitHub Repository Link: https://github.com/MattReynolds53/Sagiss-Coding-Challenge
+
+Video Demo Link: Click 'Download' upon reaching the video at https://drive.google.com/file/d/1luxKhmiMG0_Qmlt3-ZPvx8WJD5nIJgRu/view
+
+## Screenshots
+
+![](./screenshots/getAllUsers.png)
+![](./screenshots/createUser.png)
+![](./screenshots/getAllUsers2.png)
+![](./screenshots/getUserById.png)
+![](./screenshots/updateUser.png)
+![](./screenshots/deleteUser.png)

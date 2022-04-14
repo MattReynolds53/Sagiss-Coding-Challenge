@@ -42,6 +42,7 @@ const userController = {
     User.findByIdAndUpdate(
       req.params.userId,
       {
+        personalId: req.body.personalId,
         fullName: req.body.fullName,
         dateOfBirth: req.body.dateOfBirth,
         address: req.body.address,
